@@ -1,0 +1,7 @@
+{
+  "text": "Invoice from Canal Works BV to Mira Vale. Contact billing@example.test. Total due: €4,250.00 for a workshop.",
+  "names": [
+    { "kind": "company", "value": "Canal Works" },
+    { "kind": "person", "value": "Mira Vale" }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "llm-privacy",
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "description": "Inspect outbound model text locally. Replace supplied names, structured identifiers and monetary amounts, and flag residual patterns.",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./sanitizer": {
+      "types": "./dist/sanitizer.d.ts",
+      "import": "./dist/sanitizer.js"
+    },
+    "./amount-tokenizer": {
+      "types": "./dist/amount-tokenizer.d.ts",
+      "import": "./dist/amount-tokenizer.js"
+    },
+    "./name-tokenizer": {
+      "types": "./dist/name-tokenizer.d.ts",
+      "import": "./dist/name-tokenizer.js"
+    },
+    "./egress": {
+      "types": "./dist/egress.d.ts",
+      "import": "./dist/egress.js"
+    },
+    "./zdr": {
+      "types": "./dist/zdr.d.ts",
+      "import": "./dist/zdr.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "type-check": "tsc --noEmit -p tsconfig.json",
+    "demo": "node examples/invoice.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "20.17.30",
+    "typescript": "5.7.3"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mandiau-matthias/llm-privacy.git"
+  }
+}
