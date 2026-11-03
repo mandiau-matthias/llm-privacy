@@ -30,6 +30,10 @@
     "./zdr": {
       "types": "./dist/zdr.d.ts",
       "import": "./dist/zdr.js"
+    },
+    "./scrub": {
+      "types": "./dist/scrub.d.ts",
+      "import": "./dist/scrub.js"
     }
   },
   "files": [

@@ -1,0 +1,16 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f6f3ec; color: #24202d; font: 17px/1.5 system-ui, sans-serif; }
+main { max-width: 750px; margin: auto; padding: clamp(24px, 5vw, 60px) 22px; }
+small { font: 600 .8rem/1.55 ui-monospace, monospace; }
+h1 { margin: 14px 0; font: clamp(2.6rem, 8vw, 4.6rem)/1 Georgia, serif; letter-spacing: -.045em; }
+h2 { margin: 0; font: 1.55rem/1.2 Georgia, serif; }
+p { margin: .6em 0; }
+fieldset { margin: 24px 0 20px; border: 1px solid #c9c0af; border-radius: 8px; }
+legend { padding: 0 6px; font-weight: 650; }
+label { display: block; padding: .3em; cursor: pointer; }
+input { accent-color: #544189; }
+section { padding: 20px; margin: 12px 0; background: #fff; border: 1px solid #d9d2c6; border-radius: 10px; }
+.outbound { background: #ebe7f7; border-color: #ccc1e8; }
+.outbound p { overflow-wrap: anywhere; }
+footer { margin-top: 20px; font-size: .95rem; }
+a { color: #4a337d; }

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>LLM Privacy · Inspect an invoice</title>
+  <link rel="stylesheet" href="./examples/invoice.css">
+</head>
+<body>
+  <main>
+    <header>
+      <small>AUTOMATRON / LLM PRIVACY</small>
+      <h1>What leaves the invoice?</h1>
+      <p>Compare a fictional invoice with the text your app could send to a model. Change a setting and inspect the difference. All processing happens in this browser.</p>
+    </header>
+    <fieldset>
+      <legend>Try an experiment</legend>
+      <label><input type="checkbox" id="names" checked> Register the customer and supplier names</label>
+      <label><input type="checkbox" id="reference"> Add an unlabelled six-digit reference</label>
+    </fieldset>
+    <section>
+      <h2>Original invoice</h2>
+      <p id="original">Loading the fictional invoice…</p>
+    </section>
+    <section class="outbound" aria-live="polite">
+      <h2>Model input</h2>
+      <p id="model"></p>
+      <small id="reason"></small>
+    </section>
+    <footer>No model is called. <a href="https://github.com/mandiau-matthias/llm-privacy">Run the source on GitHub</a></footer>
+    <noscript>Enable JavaScript to run the example, or use the Node.js demo in the repository.</noscript>
+  </main>
+  <script type="module" src="./examples/browser.mjs"></script>
+</body>
+</html>

@@ -1,5 +1,7 @@
 # LLM Privacy
 
+**[Try the fictional invoice in your browser](https://mandiau-matthias.github.io/llm-privacy/)** · [Inspect the input](examples/invoice.json)
+
 What would a language model receive if you asked it to explain an invoice? This TypeScript package replaces the names you register, recognized identifiers, and financial amounts before your application sends text to a provider.
 
 **Fictional invoice**
