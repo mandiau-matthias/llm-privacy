@@ -1,6 +1,6 @@
 {
   "name": "llm-privacy",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "engines": {
     "node": ">=20.0.0"
@@ -34,6 +34,10 @@
     "./scrub": {
       "types": "./dist/scrub.d.ts",
       "import": "./dist/scrub.js"
+    },
+    "./send": {
+      "types": "./dist/send.d.ts",
+      "import": "./dist/send.js"
     }
   },
   "files": [

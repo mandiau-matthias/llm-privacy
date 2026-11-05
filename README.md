@@ -26,7 +26,7 @@ The second command adds an unlabelled six-digit reference. Strict mode returns a
 ### Use it in your app
 
 ```sh
-npm install https://github.com/mandiau-matthias/llm-privacy/archive/refs/tags/v0.1.0.tar.gz
+npm install https://github.com/mandiau-matthias/llm-privacy/archive/refs/tags/v0.2.0.tar.gz
 ```
 
 ```js
@@ -46,7 +46,23 @@ const modelInput = result.sanitized;
 
 Send only `modelInput` if your application chooses to call a provider. The other fields include local token maps containing original values and diagnostic excerpts that may contain sensitive text. Keep them out of model requests and shared logs.
 
-### Coverage
+### Put a boundary around the provider call
+
+```js
+import { sendWithPrivacy } from "llm-privacy/send";
+
+const result = await sendWithPrivacy({ text, names }, async (sanitizedText) => {
+  // Call your provider here using sanitizedText only.
+  return yourModelAdapter(sanitizedText);
+});
+if (result.blocked) {
+  // Ask for review. The provider callback was never invoked.
+}
+```
+
+Run `node examples/guarded-send.mjs`. A local fake sender prints exactly one sanitized payload. A second input contains an unlabelled reference and is withheld. The callback receives no token maps, raw text, or diagnostic snippets. Sender failures propagate without a fallback request. This adapter works in Node and browsers through the `llm-privacy/send` entry point.
+
+### Coverage and limits
 
 Structured patterns cover emails, URLs, selected European identifiers, phone-number forms, and long digit runs. The amount tokenizer recognizes several currency symbols, magnitude suffixes and numbers near financial terms. Name detection uses the vocabulary you supply. An unregistered name can pass through, and a pattern can also hide ordinary text. Inspect the output on representative examples before using it with real records.
 
